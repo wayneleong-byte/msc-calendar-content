@@ -549,6 +549,7 @@ input[type=checkbox]{width:18px;height:18px;accent-color:var(--p);cursor:pointer
 .tip{background:var(--warnbg);border-left:5px solid var(--warn);padding:12px 16px;margin:12px 0;font-size:16px;border-radius:0 8px 8px 0;color:var(--tx)}
 .tip.info{background:var(--pl);border-color:var(--p)}
 .tip.bad{background:var(--errbg);border-color:var(--err)}
+#finalTips .must{display:block;margin:12px 0 14px;padding:14px 16px;background:#fff200;color:#111;font-weight:800;font-size:19px;line-height:1.45;border:3px solid #111;border-radius:8px;letter-spacing:.02em}
 .err{color:var(--err);font-size:15px;margin-top:8px;font-weight:bold}
 table.t{border-collapse:separate;border-spacing:0;width:100%;font-size:16px;border:1.5px solid var(--bd2);border-radius:10px;overflow:hidden}
 table.t th{background:var(--card2);padding:10px;text-align:left}table.t td{padding:8px;border-top:1px solid var(--bd2)}
@@ -750,7 +751,7 @@ function update(){if(!cat)return;$("subjPrev").textContent=subject();
   ...(AD()?[["Start 日期",fmtD($("sd").value)],["End 日期",fmtD($("ed").value)],["全天","是（請在行事曆勾選 All day）"]]:[["Start 日期",fmtD($("sd").value)],["Start 時間",fmtT($("st").value)],["End 日期",fmtD($("ed").value)],["End 時間",fmtT($("et").value)]]),["正文",body()]];
  window._O=O;$("outs").innerHTML='<div class="outgrid">'+O.map((o,i)=>`<div class="out${/日期|時間|全天/.test(o[0])?"":" full"}"><h4>${o[0]}<button class="s" onclick="cp(${i},this)">複製</button></h4><pre></pre></div>`).join("")+'</div>';
  [...$("outs").querySelectorAll("pre")].forEach((p,i)=>p.textContent=O[i][1]);
- $("finalTips").innerHTML="<b>注意事項：</b><br>✅ 請選擇 <b>Exhibition</b> 的行事曆。<br>✅ 館內地點請確認未與其他 booking 撞時段。<br>"+(AD()?"✅ 全天活動請在行事曆勾選 All day。<br>":"")+"✅ 請檢查 Optional 是否需加入其他部門或秘書。<br>"+(cat==="A"?"📎 如有附件，請於Zimbra端自行補上。":"📎 如有附件，請自行上載。<br>✅ 請確認主題名稱正確及完整。");}
+ $("finalTips").innerHTML="<b>注意事項：</b><div class=\"must\">⚠️ 務必要用invitation方式通知相關人士，不要建立完行事曆就算！</div>✅ 請選擇 <b>Exhibition</b> 的行事曆。<br>✅ 館內地點請確認未與其他 booking 撞時段。<br>"+(AD()?"✅ 全天活動請在行事曆勾選 All day。<br>":"")+"✅ 請檢查 Optional 是否需加入其他部門或秘書。<br>"+(cat==="A"?"📎 如有附件，請於Zimbra端自行補上。":"📎 如有附件，請自行上載。<br>✅ 請確認主題名稱正確及完整。");}
 function cpText(t,b){const ok=()=>{const o=b.textContent;b.textContent="已複製 ✓";setTimeout(()=>b.textContent=o,1200);};
  const fb=()=>{const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(e){}a.remove();ok();};
  if(!navigator.clipboard){fb();return;}navigator.clipboard.writeText(t).catch(fb).then(()=>{const o=b.textContent;b.textContent="已複製 ✓";setTimeout(()=>b.textContent=o,1200);});}
