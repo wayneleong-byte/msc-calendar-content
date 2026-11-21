@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="dark"><head><meta charset="UTF-8"><style id="qw-theme">:root {
+  --contextual-navbar-foreground-color: #000000 !important;
+  --connection-foreground-color: #FFFFFF !important;
+  --automation-foreground-color: #FFFFFF !important;
+  --global-navbar-background-color: #F3F3F7 !important;
+  --accent-foreground-color: #FFFFFF !important;
+  --primary-foreground-color: #000000 !important;
+  --measure-foreground-color: #CB7600 !important;
+  --dimension-foreground-color: #1B84BF !important;
+  --warning-background-color: #FF9800 !important;
+  --warning-foreground-color: #000000 !important;
+  --success-background-color: #27700E !important;
+  --info-foreground-color: #FFFFFF !important;
+  --secondary-foreground-color: #000000 !important;
+  --info-background-color: #2196F3 !important;
+  --measure-background-color: #FFF8EF !important;
+  --contextual-navbar-background-color: #FFFFFF !important;
+  --accent-background-color: #4200DB !important;
+  --visualization-background-color: #6842FF !important;
+  --connection-background-color: #FF4B14 !important;
+  --secondary-background-color: #F9F9FB !important;
+  --danger-background-color: #C82745 !important;
+  --automation-background-color: #D600BA !important;
+  --success-foreground-color: #FFFFFF !important;
+  --danger-foreground-color: #FFFFFF !important;
+  --dimension-background-color: #EEF8FF !important;
+  --insight-foreground-color: #FFFFFF !important;
+  --primary-background-color: #FFFFFF !important;
+  --insight-background-color: #78008A !important;
+  --visualization-foreground-color: #FFFFFF !important;
+  --global-navbar-foreground-color: #5A5A5B !important;
+  --chat-column-base: 720px !important;
+  --chat-column-max: clamp(888px, 50vw, 1200px) !important;
+  --color-bg: #faf9fc !important;
+  --color-navbar-bg: #f9f9fb !important;
+  --color-navbar-fg: #131920 !important;
+  --color-navbar-divider: rgba(0, 0, 0, .12) !important;
+  --color-leftnav-bg: #ffffff !important;
+  --color-bg-chat-view: #f9f9fb !important;
+  --color-bg-secondary: #ffffff !important;
+  --color-bg-tertiary: #f9fafb !important;
+  --color-bg-hover: #f3f4f6 !important;
+  --color-surface: #f9fafb !important;
+  --color-surface-hover: #f3f4f6 !important;
+  --color-surface-active: #e5e7eb !important;
+  --color-border: rgba(0, 0, 0, .12) !important;
+  --color-border-light: rgba(0, 0, 0, .06) !important;
+  --color-border-strong: #d1d5db !important;
+  --background-toggle-off-default: rgba(255, 255, 255, 0) !important;
+  --color-primary: #4200db !important;
+  --color-primary-dark: #35009e !important;
+  --color-primary-light: #8575ff !important;
+  --color-primary-bg: #e8e6ff !important;
+  --color-primary-hover-border: #35009e !important;
+  --color-nav-icon-active: #4200db !important;
+  --color-nav-hover-border: #4200db !important;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent) !important;
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent) !important;
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent) !important;
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent) !important;
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent) !important;
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent) !important;
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent) !important;
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent) !important;
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent) !important;
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent) !important;
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent) !important;
+  --color-focus-ring: #4200db !important;
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-sidebar-hover-solid: color-mix(in srgb, #4200db 12%, #faf9fc) !important;
+  --block-selection-outline-offset: 2px !important;
+  --color-accent: #4200db !important;
+  --color-accent-foreground: #4200db !important;
+  --color-accent-dark: #35009e !important;
+  --color-accent-light: #e8e6ff !important;
+  --color-accent-inverse: #ffffff !important;
+  --color-link: #4200db !important;
+  --color-brand-ai-gradient-start: #6842ff !important;
+  --color-brand-ai-gradient-mid: #d600ba !important;
+  --color-brand-ai-gradient-end: #ff4b14 !important;
+  --color-brand-kiro: #9147ff !important;
+  --color-primary-gradient-end: #e8e6ff !important;
+  --color-primary-bg-solid: #e8e6ff !important;
+  --color-user-bubble: #F3F3F7 !important;
+  --color-user-bubble-text: #131920 !important;
+  --color-text: #131920 !important;
+  --color-text-secondary: #5e5e5e !important;
+  --color-text-tertiary: #656871 !important;
+  --color-text-muted: #656871 !important;
+  --color-text-on-primary: #ffffff !important;
+  --color-success: #00802f !important;
+  --color-success-dark: #00471e !important;
+  --color-success-light: #d9ffd6 !important;
+  --color-success-hover: #005c26 !important;
+  --color-success-bg: #e6f5eb !important;
+  --color-success-border: #b3d9bf !important;
+  --color-success-foreground: #00802f !important;
+  --color-success-dark-foreground: #00471e !important;
+  --color-success-text: #00471e !important;
+  --color-error: #db0000 !important;
+  --color-error-dark: #700000 !important;
+  --color-error-light: #ffe0e0 !important;
+  --color-error-hover: #ffe0e0 !important;
+  --color-error-bg: #fceaea !important;
+  --color-error-border: #f2cccc !important;
+  --color-error-active-border: #db0000 !important;
+  --color-error-foreground: #db0000 !important;
+  --color-error-dark-foreground: #700000 !important;
+  --color-error-inverse: #ffffff !important;
+  --color-error-text: #700000 !important;
+  --color-warning: #f2b100 !important;
+  --color-warning-dark: #573a00 !important;
+  --color-warning-light: #fffbbd !important;
+  --color-warning-hover: #db9200 !important;
+  --color-warning-bg: #fef7e6 !important;
+  --color-warning-border: #f9dfa3 !important;
+  --color-warning-foreground: #f2b100 !important;
+  --color-warning-dark-foreground: #573a00 !important;
+  --color-warning-inverse: #573a00 !important;
+  --color-surface-warning: #fffbbd !important;
+  --color-text-warning: #573a00 !important;
+  --color-info: #006ce0 !important;
+  --color-info-dark: #002a66 !important;
+  --color-info-light: #d1f1ff !important;
+  --color-info-hover: #003b8f !important;
+  --color-info-bg: #ebf3fc !important;
+  --color-info-border: #b3d1f0 !important;
+  --color-info-foreground: #006ce0 !important;
+  --color-info-dark-foreground: #002a66 !important;
+  --color-info-inverse: #ffffff !important;
+  --color-overlay: rgba(0, 0, 0, .5) !important;
+  --color-shadow: rgba(0, 0, 0, .08) !important;
+  --color-hover: rgba(0, 0, 0, .05) !important;
+  --color-tooltip-bg: rgba(0, 0, 0, .85) !important;
+  --color-tooltip-text: #ffffff !important;
+  --color-voice-purple: #8575ff !important;
+  --color-voice-purple-dark: #4200db !important;
+  --color-voice-purple-light: #8575ff !important;
+  --color-voice-red: #db0000 !important;
+  --color-voice-red-dark: #700000 !important;
+  --color-voice-amber: #f2b100 !important;
+  --color-voice-purple-glow: rgba(66, 0, 219, .4) !important;
+  --color-voice-red-glow: rgba(219, 0, 0, .4) !important;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace !important;
+  --text-2xs: .5625rem !important;
+  --text-xs: .625rem !important;
+  --text-sm: .6875rem !important;
+  --text-base: .75rem !important;
+  --text-md: .8125rem !important;
+  --text-lg: .875rem !important;
+  --text-xl: 1rem !important;
+  --text-2xl: 1.125rem !important;
+  --text-3xl: 1.25rem !important;
+  --text-4xl: 1.5rem !important;
+  --text-5xl: 2rem !important;
+  --spacing-1: calc(.25rem * 1) !important;
+  --spacing-1-5: calc(.25rem * 1.5) !important;
+  --spacing-2: calc(.25rem * 2) !important;
+  --spacing-3: calc(.25rem * 3) !important;
+  --spacing-4: calc(.25rem * 4) !important;
+  --spacing-5: calc(.25rem * 5) !important;
+  --spacing-6: calc(.25rem * 6) !important;
+  --spacing-7: calc(.25rem * 7) !important;
+  --spacing-8: calc(.25rem * 8) !important;
+  --spacing-9: calc(.25rem * 9) !important;
+  --spacing-10: calc(.25rem * 10) !important;
+  --border-radius-rounded-lg: 8px !important;
+  --radius-sm: 6px !important;
+  --radius-md: 10px !important;
+  --radius-card: 12px !important;
+  --radius-lg: 16px !important;
+  --radius-pill: 8px !important;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .05) !important;
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .08) !important;
+  --shadow-lg: 0 4px 16px 4px rgba(0, 0, 0, .16), 0 2px 6px 1px rgba(0, 0, 0, .16) !important;
+  --color-success-bg-solid: #d9ffd6 !important;
+  --color-error-bg-solid: #ffe0e0 !important;
+  --color-error-border-solid: #ffe0e0 !important;
+  --color-warning-bg-solid: #fffbbd !important;
+  --color-warning-text: #573a00 !important;
+  --color-info-bg-solid: #d1f1ff !important;
+  --color-info-bg-solid-alt: #d1f1ff !important;
+  --color-info-text: #002a66 !important;
+  --color-info-text-alt: #002a66 !important;
+  --color-emerald: #10b981 !important;
+  --color-teal: #4ecdc4 !important;
+  --color-code-bg: #F3F3F7 !important;
+  --color-code-header-bg: #f1f3f5 !important;
+  --color-code-text: #24292e !important;
+  --color-code-border: #e1e4e8 !important;
+  --color-code-muted: #6a737d !important;
+  --color-inline-code-bg: #F3F3F7 !important;
+  --color-inline-code-text: #24292e !important;
+  --color-inline-code-border: #e1e4e8 !important;
+  --color-scrollbar-thumb: #d1d5db !important;
+  --color-scrollbar-track: transparent !important;
+  --qs-data-cat-01: #4338CA !important;
+  --qs-data-cat-02: #D97706 !important;
+  --qs-data-cat-03: #0891B2 !important;
+  --qs-data-cat-04: #8B5CF6 !important;
+  --qs-data-cat-05: #15803D !important;
+  --qs-data-cat-06: #0C4A6E !important;
+  --qs-data-cat-07: #D946EF !important;
+  --qs-data-cat-08: #65A30D !important;
+  --qs-data-cat-09: #1D4ED8 !important;
+  --qs-data-cat-10: #831843 !important;
+  --qs-data-cat-11: #C2410C !important;
+  --qs-data-cat-12: #115E59 !important;
+  --qs-data-cat-other: #737373 !important;
+  --qs-content: #fff !important;
+  --qs-main: #f9f9fb !important;
+  --qs-primary-foreground: #131920 !important;
+  --qs-secondary-foreground: #656871 !important;
+  --qs-tertiary-foreground: #656871 !important;
+  --qs-placeholder-foreground: #656871 !important;
+  --qs-divider: #dedee3 !important;
+  --qs-default-border: #8c8c94 !important;
+  --qs-neutral-soft: #b4b4bb !important;
+  --qs-neutral-gray-50: #f9fafb !important;
+  --qs-tertiary-background: #f9fafb !important;
+  --qs-action-hover: #f3f3f7 !important;
+  --qs-primary-default: #4200db !important;
+  --qs-primary-dark: #35009e !important;
+  --qs-primary-medium: #8575ff !important;
+  --qs-primary-light: #e8e6ff !important;
+  --qs-primary-inverse: #fff !important;
+  --qs-success-default: #00802f !important;
+  --qs-success-dark: #00471e !important;
+  --qs-success-light: #d9ffd6 !important;
+  --qs-error-default: #db0000 !important;
+  --qs-error-dark: #700000 !important;
+  --qs-warning-default: #f2b100 !important;
+  --qs-warning-dark: #573a00 !important;
+  --qs-warning-light: #fffbbd !important;
+  --qs-info-default: #006ce0 !important;
+  --qs-info-dark: #002a66 !important;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+  --safe-top: 0px !important;
+  --safe-bottom: 0px !important;
+  --safe-left: 0px !important;
+  --safe-right: 0px !important;
+  --qs-action-active: #e8e6ff !important;
+  --qs-action-active-hover: #b2a8ff !important;
+  --qs-action-disabled: #f3f3f7 !important;
+  --qs-active-border: #4200db !important;
+  --qs-application-navbar: #4200db !important;
+  --qs-application-navbar-dark: #35009e !important;
+  --qs-application-navbar-foreground: #fff !important;
+  --qs-application-navbar-light: #e8e6ff !important;
+  --qs-automation-dark: #660052 !important;
+  --qs-automation-default: #d600ba !important;
+  --qs-automation-light: #ffe0fb !important;
+  --qs-automation-medium: #b3008f !important;
+  --qs-automation-soft: #ff94f1 !important;
+  --qs-avatar-blue-bg: #d1f1ff !important;
+  --qs-avatar-blue-fg: #002a66 !important;
+  --qs-avatar-fuchsia-bg: #fce6ff !important;
+  --qs-avatar-fuchsia-fg: #590066 !important;
+  --qs-avatar-green-bg: #d9ffd6 !important;
+  --qs-avatar-green-fg: #00471e !important;
+  --qs-avatar-neutral-bg: #dedee3 !important;
+  --qs-avatar-neutral-fg: #131920 !important;
+  --qs-avatar-orange-bg: #ffe0d6 !important;
+  --qs-avatar-orange-fg: #661800 !important;
+  --qs-avatar-pink-bg: #ffe0fb !important;
+  --qs-avatar-pink-fg: #660052 !important;
+  --qs-avatar-primary-bg: #e8e6ff !important;
+  --qs-avatar-primary-fg: #35009e !important;
+  --qs-avatar-red-bg: #ffe0e0 !important;
+  --qs-avatar-red-fg: #700000 !important;
+  --qs-avatar-violet-bg: #f2e5ff !important;
+  --qs-avatar-violet-fg: #45008a !important;
+  --qs-avatar-yellow-bg: #fffbbd !important;
+  --qs-avatar-yellow-fg: #573a00 !important;
+  --qs-blue-100: #e2ebff !important;
+  --qs-blue-1000: #060d27 !important;
+  --qs-blue-200: #c2d5ff !important;
+  --qs-blue-300: #9fbdff !important;
+  --qs-blue-400: #7ea0fc !important;
+  --qs-blue-50: #fafbff !important;
+  --qs-blue-500: #517df6 !important;
+  --qs-blue-600: #2d5fe8 !important;
+  --qs-blue-700: #1d3cb9 !important;
+  --qs-blue-800: #162c85 !important;
+  --qs-blue-900: #102165 !important;
+  --qs-blue-950: #0b1746 !important;
+  --qs-brand: #fff !important;
+  --qs-brand-foreground: #131920 !important;
+  --qs-brand-navbar: #131920 !important;
+  --qs-brand-navbar-dark: #000 !important;
+  --qs-brand-navbar-foreground: #fff !important;
+  --qs-brand-navbar-light: #dedee3 !important;
+  --qs-coachmark: #006ce0 !important;
+  --qs-connection-dark: #661800 !important;
+  --qs-connection-default: #db3300 !important;
+  --qs-connection-light: #ffe0d6 !important;
+  --qs-connection-soft: #ff997a !important;
+  --qs-content-inverse: #333843 !important;
+  --qs-content-inverse-active: #131920 !important;
+  --qs-contrast-foreground: #131920 !important;
+  --qs-control-selected-bg: #4200db !important;
+  --qs-control-selected-hover-bg: #35009e !important;
+  --qs-darkpurple1-100: #eee1ef !important;
+  --qs-darkpurple1-1000: #130b14 !important;
+  --qs-darkpurple1-200: #dcc0dd !important;
+  --qs-darkpurple1-300: #c99ecc !important;
+  --qs-darkpurple1-400: #b57ab8 !important;
+  --qs-darkpurple1-50: #f8f2f8 !important;
+  --qs-darkpurple1-500: #97529b !important;
+  --qs-darkpurple1-600: #754078 !important;
+  --qs-darkpurple1-700: #542e57 !important;
+  --qs-darkpurple1-800: #472749 !important;
+  --qs-darkpurple1-900: #341c35 !important;
+  --qs-darkpurple1-950: #241325 !important;
+  --qs-darkpurple2-100: #f1e3fc !important;
+  --qs-darkpurple2-1000: #1b042f !important;
+  --qs-darkpurple2-200: #e7d0fb !important;
+  --qs-darkpurple2-300: #d6b0f8 !important;
+  --qs-darkpurple2-400: #be81f3 !important;
+  --qs-darkpurple2-50: #f8f1fe !important;
+  --qs-darkpurple2-500: #a652ef !important;
+  --qs-darkpurple2-600: #8e24eb !important;
+  --qs-darkpurple2-700: #7413c9 !important;
+  --qs-darkpurple2-800: #580e98 !important;
+  --qs-darkpurple2-900: #36095d !important;
+  --qs-darkpurple2-950: #260642 !important;
+  --qs-data-categorical-01: #4338ca !important;
+  --qs-data-categorical-02: #d97706 !important;
+  --qs-data-categorical-03: #0891b2 !important;
+  --qs-data-categorical-04: #8b5cf6 !important;
+  --qs-data-categorical-05: #15803d !important;
+  --qs-data-categorical-06: #0c4a6e !important;
+  --qs-data-categorical-07: #d946ef !important;
+  --qs-data-categorical-08: #65a30d !important;
+  --qs-data-categorical-09: #1d4ed8 !important;
+  --qs-data-categorical-10: #831843 !important;
+  --qs-data-categorical-11: #c2410c !important;
+  --qs-data-categorical-12: #115e59 !important;
+  --qs-data-categorical-other: #737373 !important;
+  --qs-data-divergent-negative: #ea580c !important;
+  --qs-data-divergent-positive: #4f46e5 !important;
+  --qs-data-divergent-red-green-negative: #dc2626 !important;
+  --qs-data-divergent-red-green-positive: #16a34a !important;
+  --qs-data-missing: #d4d4d4 !important;
+  --qs-data-sentiment-neutral: #737373 !important;
+  --qs-data-sentiment-warning: #9e6900 !important;
+  --qs-data-sequential-duochromatic-high: #1e1b4b !important;
+  --qs-data-sequential-duochromatic-low: #8b5cf6 !important;
+  --qs-data-sequential-monochromatic-high: #4f46e5 !important;
+  --qs-default-badge: #b4b4bb !important;
+  --qs-default-badge-dot: #656871 !important;
+  --qs-dimension: #4200db !important;
+  --qs-dimension-experimental: #4200db !important;
+  --qs-dimension-experimental-foreground: #4200db !important;
+  --qs-dimension-foreground: #fff !important;
+  --qs-disabled: #8c8c94 !important;
+  --qs-disabled-border: #dedee3 !important;
+  --qs-disabled-foreground: #b4b4bb !important;
+  --qs-divider-light: #f3f3f7 !important;
+  --qs-error-active-border: #db0000 !important;
+  --qs-error-border: #ffe0e0 !important;
+  --qs-error-foreground: #db0000 !important;
+  --qs-error-inverse: #fff !important;
+  --qs-error-light: #ffe0e0 !important;
+  --qs-error-medium: #900 !important;
+  --qs-error-soft: #ff9e9e !important;
+  --qs-focus-offset: 1px !important;
+  --qs-font-base-letter-spacing: .15px !important;
+  --qs-font-display: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+  --qs-gradient-automation-light-stop: #ffe0fb !important;
+  --qs-gradient-automation-medium-stop: #b3008f !important;
+  --qs-gradient-automation-stop: #d600ba !important;
+  --qs-gradient-connection-light-stop: #ffe0d6 !important;
+  --qs-gradient-connection-stop: #db3300 !important;
+  --qs-gradient-insight-light-stop: #fce6ff !important;
+  --qs-gradient-insight-stop: #a000b8 !important;
+  --qs-gradient-visualization-light-stop: #f2e5ff !important;
+  --qs-gradient-visualization-stop: #7300e5 !important;
+  --qs-green-100: #ccffd8 !important;
+  --qs-green-1000: #001409 !important;
+  --qs-green-200: #a9efba !important;
+  --qs-green-300: #84d39a !important;
+  --qs-green-400: #71c68c !important;
+  --qs-green-50: #f0fff3 !important;
+  --qs-green-500: #5bbe7a !important;
+  --qs-green-600: #3c955a !important;
+  --qs-green-700: #227340 !important;
+  --qs-green-800: #00441f !important;
+  --qs-green-900: #003317 !important;
+  --qs-green-950: #002410 !important;
+  --qs-grid-gap: 16px !important;
+  --qs-grid-gap-xl: 24px !important;
+  --qs-hero-banner-button-hover: color-mix(in srgb, #fff, transparent 60%) !important;
+  --qs-hover-border: #333843 !important;
+  --qs-info-inverse: #fff !important;
+  --qs-info-light: #d1f1ff !important;
+  --qs-info-medium: #003b8f !important;
+  --qs-info-soft: #75cfff !important;
+  --qs-insight-dark: #590066 !important;
+  --qs-insight-default: #a000b8 !important;
+  --qs-insight-light: #fce6ff !important;
+  --qs-insight-soft: #f299ff !important;
+  --qs-main-foreground: #131920 !important;
+  --qs-main-secondary-foreground: #656871 !important;
+  --qs-measure: #00802f !important;
+  --qs-measure-experimental: #f2b100 !important;
+  --qs-measure-experimental-foreground: #f2b100 !important;
+  --qs-measure-foreground: #fff !important;
+  --qs-neutral-0: #fff !important;
+  --qs-neutral-100: #f5f3ef !important;
+  --qs-neutral-1000: #0b0a0a !important;
+  --qs-neutral-200: #ece9e4 !important;
+  --qs-neutral-300: #e2dfda !important;
+  --qs-neutral-400: #cdc9c1 !important;
+  --qs-neutral-50: #faf9f7 !important;
+  --qs-neutral-500: #adaaa3 !important;
+  --qs-neutral-600: #94918b !important;
+  --qs-neutral-700: #7d7a73 !important;
+  --qs-neutral-800: #5e5b56 !important;
+  --qs-neutral-900: #302f2c !important;
+  --qs-neutral-950: #151310 !important;
+  --qs-neutral-black: #000 !important;
+  --qs-neutral-dark: #333843 !important;
+  --qs-neutral-deep: #656871 !important;
+  --qs-neutral-default: #dedee3 !important;
+  --qs-neutral-light: #f3f3f7 !important;
+  --qs-neutral-lightest: #f9f9fb !important;
+  --qs-neutral-medium: #8c8c94 !important;
+  --qs-neutral-strong: #131920 !important;
+  --qs-neutral-white: #fff !important;
+  --qs-overlay: color-mix(in srgb, #131920, transparent 50%) !important;
+  --qs-popover-border: transparent !important;
+  --qs-primary-inverse-foreground: #fff !important;
+  --qs-primary-soft: #b2a8ff !important;
+  --qs-progress-active: #4200db !important;
+  --qs-red-100: #ffe4e1 !important;
+  --qs-red-1000: #240004 !important;
+  --qs-red-200: #ffc7c2 !important;
+  --qs-red-300: #ffa099 !important;
+  --qs-red-400: #eb6560 !important;
+  --qs-red-50: #fff6f5 !important;
+  --qs-red-500: #c33c38 !important;
+  --qs-red-600: #aa2b2b !important;
+  --qs-red-700: #8a0f0f !important;
+  --qs-red-800: #6e000d !important;
+  --qs-red-900: #57000a !important;
+  --qs-red-950: #3d0007 !important;
+  --qs-secondary: #dedee3 !important;
+  --qs-secondary-dark: #b4b4bb !important;
+  --qs-secondary-light: #f3f3f7 !important;
+  --qs-shadow: #00000029 !important;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029 !important;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029 !important;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029 !important;
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029 !important;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029 !important;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029 !important;
+  --qs-spice: #ff9800 !important;
+  --qs-success-inverse: #fff !important;
+  --qs-success-medium: #005c26 !important;
+  --qs-success-soft: #aeffa8 !important;
+  --qs-tag-default: #dedee3 !important;
+  --qs-tag-soft-border: #b4b4bb !important;
+  --qs-toggle-tile-lg: calc(.25rem * 15) !important;
+  --qs-toggle-tile-md: calc(.25rem * 12) !important;
+  --qs-toggle-tile-sm: calc(.25rem * 8) !important;
+  --qs-transparent: transparent !important;
+  --qs-visualization-dark: #45008a !important;
+  --qs-visualization-default: #7300e5 !important;
+  --qs-visualization-light: #f2e5ff !important;
+  --qs-visualization-soft: #d4a8ff !important;
+  --qs-warning-experimental: #f2b100 !important;
+  --qs-warning-experimental-light: #fffbbd !important;
+  --qs-warning-experimental-light-foreground: #fffbbd !important;
+  --qs-warning-inverse: #573a00 !important;
+  --qs-warning-medium: #db9200 !important;
+  --qs-warning-soft: #ffed4d !important;
+  --qs-width-modal-lg: 1136px !important;
+  --qs-width-modal-md: 600px !important;
+  --qs-width-modal-sm: 384px !important;
+  --qs-yellow-100: #fff5cf !important;
+  --qs-yellow-1000: #1f1100 !important;
+  --qs-yellow-200: #ffe79e !important;
+  --qs-yellow-300: #fbd86f !important;
+  --qs-yellow-400: #facb3d !important;
+  --qs-yellow-50: #fffcf0 !important;
+  --qs-yellow-500: #e2ac36 !important;
+  --qs-yellow-600: #ca8d2b !important;
+  --qs-yellow-700: #9d672f !important;
+  --qs-yellow-800: #7a4c19 !important;
+  --qs-yellow-900: #522e00 !important;
+  --qs-yellow-950: #381f00 !important;
+  --qs-duration-reorder: .125s !important;
+  --qs-ease-reorder: ease-in-out !important;
+  --z-subtask-modal: 10000 !important;
+  --z-above-subtask-modal: 10001 !important;
+  --react-pdf-text-layer: 1 !important;
+  --highlight-bg-color: rgba(180, 0, 170, 1) !important;
+  --highlight-selected-bg-color: rgba(0, 100, 0, 1) !important;
+  --react-pdf-annotation-layer: 1 !important;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>") !important;
+  --input-focus-border-color: Highlight !important;
+  --input-focus-outline: 1px solid Canvas !important;
+  --input-unfocused-border-color: transparent !important;
+  --input-disabled-border-color: transparent !important;
+  --input-hover-border-color: black !important;
+  --link-outline: none !important;
+}</style><title>公司行事曆內容產生器</title>
+<style nonce="a0P3Uhk39qQkofYv3oVOxQ==">
+:root,[data-theme=dark]{--bg:#0d1117;--card:#161b22;--card2:#1c2330;--bd:#30394a;--bd2:#253041;--tx:#e6edf3;--tx2:#c3ccd8;--mu:#8b98a9;--p:#2dd4bf;--pd:#5eead4;--pl:#123c3a;--pt:#04201d;--hd1:#0b1f2a;--hd2:#103a3f;--warnbg:#2a2210;--warn:#f5b84b;--err:#f87171;--errbg:#3b1d1f;--sh:#0008}
+[data-theme=light]{--bg:#f4f1ea;--card:#ffffff;--card2:#faf8f3;--bd:#d9d2c3;--bd2:#ebe5d8;--tx:#1f2937;--tx2:#374151;--mu:#6b7280;--p:#0f766e;--pd:#115e59;--pl:#e0f2ef;--pt:#ffffff;--hd1:#134e4a;--hd2:#0f766e;--warnbg:#fff7e6;--warn:#d97706;--err:#b91c1c;--errbg:#fee2e2;--sh:#0002}
+*{box-sizing:border-box}
+body{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC",sans-serif;background:var(--bg);margin:0;color:var(--tx);font-size:17px;line-height:1.6;transition:background .3s,color .3s}
+header{background:linear-gradient(90deg,var(--hd1),var(--hd2));color:#fff;padding:14px 40px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px var(--sh);position:sticky;top:0;z-index:10;height:64px}
+header h1{font-size:24px;margin:0;letter-spacing:1px}
+.hr{display:flex;gap:12px;align-items:center}
+#hdrCat{background:#ffffff22;padding:5px 16px;border-radius:20px;font-size:16px}
+#hdrCat:empty{display:none}
+#themeBtn{background:#ffffff22;border:1px solid #ffffff44;padding:6px 16px;font-size:15px;color:#fff}
+#themeBtn:hover{background:#ffffff38;box-shadow:none}
+.steps{display:flex;padding:16px 40px 0;background:var(--card);border-bottom:1px solid var(--bd2);position:sticky;top:64px;z-index:9}
+.steps div{flex:1;text-align:center;padding:10px 6px;cursor:pointer;font-size:16px;color:var(--mu);border-bottom:4px solid var(--bd2);transition:.2s}
+.steps div:hover{color:var(--p);background:var(--pl)}
+.steps div.on{color:var(--pd);font-weight:bold;border-bottom-color:var(--p)}
+main{max-width:1240px;margin:26px auto 40px;background:var(--card);padding:30px 40px;border-radius:14px;box-shadow:0 4px 24px var(--sh);border:1px solid var(--bd2)}
+.page{display:none;animation:fd .25s}.page.on{display:block}
+@keyframes fd{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+label{font-weight:bold;display:block;margin:20px 0 8px;font-size:17px;color:var(--tx)}
+input[type=text],input[type=date],select,textarea{padding:10px 12px;border:1.5px solid var(--bd);border-radius:8px;font-size:17px;font-family:inherit;background:var(--card2);color:var(--tx);transition:.15s;color-scheme:var(--cs,dark)}
+[data-theme=light] input,[data-theme=light] select,[data-theme=light] textarea{--cs:light}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--p);box-shadow:0 0 0 3px color-mix(in srgb,var(--p) 30%,transparent)}
+input::placeholder,textarea::placeholder{color:var(--mu)}
+input[type=text].w,select.w,textarea{width:100%}
+select{cursor:pointer}
+.row{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start}.row>div{flex:1;min-width:200px}
+.grid{display:grid;gap:6px 12px;border:1.5px solid var(--bd2);padding:14px;border-radius:10px;background:var(--card2)}
+.g5{grid-template-columns:repeat(5,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.grid label{font-weight:normal;margin:0;display:flex;align-items:center;gap:8px;cursor:pointer;padding:6px 10px;border-radius:6px;font-size:16px;border:1.5px solid transparent;transition:.15s;color:var(--tx2)}
+.grid label:hover{background:var(--card);border-color:var(--bd)}
+.grid label:has(input:checked){background:var(--pl);border-color:var(--p);color:var(--pd);font-weight:bold}
+input[type=checkbox]{width:18px;height:18px;accent-color:var(--p);cursor:pointer}
+.allday{display:inline-flex!important;align-items:center;gap:10px;margin:20px 0 0!important;padding:8px 16px;border:1.5px solid var(--bd);border-radius:8px;cursor:pointer;background:var(--card2)}
+.allday:has(input:checked){background:var(--pl);border-color:var(--p);color:var(--pd)}
+.tip{background:var(--warnbg);border-left:5px solid var(--warn);padding:12px 16px;margin:12px 0;font-size:16px;border-radius:0 8px 8px 0;color:var(--tx)}
+.tip.info{background:var(--pl);border-color:var(--p)}
+.tip.bad{background:var(--errbg);border-color:var(--err)}
+.err{color:var(--err);font-size:15px;margin-top:8px;font-weight:bold}
+table.t{border-collapse:separate;border-spacing:0;width:100%;font-size:16px;border:1.5px solid var(--bd2);border-radius:10px;overflow:hidden}
+table.t th{background:var(--card2);padding:10px;text-align:left}table.t td{padding:8px;border-top:1px solid var(--bd2)}
+button{padding:10px 22px;border:0;border-radius:8px;background:var(--p);color:var(--pt);cursor:pointer;font-size:17px;font-family:inherit;font-weight:bold;transition:.15s}
+button:hover{background:var(--pd);transform:translateY(-1px);box-shadow:0 3px 10px var(--sh)}
+button.g{background:var(--bd2);color:var(--tx)}button.g:hover{background:var(--bd)}
+button.s{padding:6px 14px;font-size:15px;margin-top:8px}
+button.r{background:var(--errbg);color:var(--err);margin-top:0}button.r:hover{background:var(--err);color:#fff}
+.nav{display:flex;justify-content:space-between;margin-top:30px;border-top:1px solid var(--bd2);padding-top:20px}
+.nav button{padding:12px 34px;font-size:18px}
+.dyn{display:flex;gap:10px;margin:8px 0;align-items:center}
+.outgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.out{border:1.5px solid var(--bd2);border-radius:10px;margin:8px 0;overflow:hidden;background:var(--card2)}
+.out.full{grid-column:1/-1}
+.out h4{margin:0;padding:8px 16px;background:var(--bd2);display:flex;justify-content:space-between;align-items:center;font-size:16px;color:var(--pd)}
+.out h4 button{margin:0}
+.out pre{margin:0;padding:12px 16px;white-space:pre-wrap;font-family:inherit;font-size:17px;min-height:24px;color:var(--tx)}
+.cat{border:2px solid var(--bd2);border-radius:12px;padding:22px 26px;margin:16px 0;cursor:pointer;transition:.2s;font-size:17px;background:var(--card2);color:var(--tx2)}
+.cat b{font-size:21px;display:block;margin-bottom:6px;color:var(--tx)}
+.cat:hover{border-color:var(--p)}
+.cat.on{border-color:var(--p);background:var(--pl);box-shadow:0 0 0 3px color-mix(in srgb,var(--p) 25%,transparent)}
+.cat.on b::before{content:"✔ ";color:var(--p)}
+#subjPrev{font-size:18px;color:var(--pd)}
+small{font-size:15px;color:var(--mu)}
+
+.code{display:none;color:var(--p);font-family:Consolas,monospace;font-size:15px;background:var(--pl);padding:1px 6px;border-radius:4px;margin-right:6px}
+body.showCode .code{display:inline}
+.sgrp{border:1.5px solid var(--bd2);border-radius:10px;background:var(--card2);padding:6px 10px}
+.grpRow{display:flex;gap:12px;align-items:flex-start;padding:6px 0;border-bottom:1px dashed var(--bd2)}
+.grpRow:last-child{border:0}
+.grpL{flex:0 0 38px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--pl);color:var(--pd);font-weight:bold;font-size:18px;border-radius:8px;transition:.2s}
+.grpRow:hover .grpL{background:var(--p);color:var(--pt);transform:scale(1.08)}
+.grpI{display:flex;flex-wrap:wrap;gap:6px}
+.grpI label{font-weight:normal;margin:0;display:flex;align-items:center;gap:8px;cursor:pointer;padding:5px 12px;border-radius:20px;font-size:16px;border:1.5px solid var(--bd);background:var(--card);color:var(--tx2);transition:all .18s ease}
+.grpI label:has(input:checked){background:var(--pl);border-color:var(--p);color:var(--pd);font-weight:bold}
+/* hover effects */
+.grid label,.grpI label,.cat,.allday,button,select,input[type=text],input[type=date],textarea,.steps div,.out{transition:all .18s ease}
+.grid label:hover,.grpI label:hover{background:var(--pl);border-color:var(--p);color:var(--pd);transform:translateY(-2px);box-shadow:0 4px 12px var(--sh)}
+.grid label:active,.grpI label:active{transform:scale(.96)}
+.grid label:has(input:checked),.grpI label:has(input:checked){animation:pop .25s}
+@keyframes pop{50%{transform:scale(1.08)}}
+.cat:hover{transform:translateY(-3px);box-shadow:0 8px 22px var(--sh)}
+select:hover,input[type=text]:hover,input[type=date]:hover,textarea:hover{border-color:var(--p)}
+.out:hover{border-color:var(--p);box-shadow:0 4px 14px var(--sh)}
+.steps div:hover{transform:translateY(-1px)}
+.allday:hover{border-color:var(--p);transform:translateY(-2px)}
+table.t tr:hover td{background:var(--pl)}
+button:active{transform:scale(.95)}
+</style></head><body>
+<header><h1>📅 公司行事曆內容產生器</h1><div class="hr"><span id="hdrCat"></span><button id="themeBtn" onclick="toggleTheme()">☀️ 日間模式</button></div></header>
+<div class="steps" id="steps"></div>
+<main>
+
+<!-- P1 -->
+<section class="page" data-t="1. 類別">
+<div class="cat" data-cat="A"><b>參與或舉行活動</b><br><small>包括公司有持份的比賽頒獎禮（屬比賽活動延伸，需要記錄數據）</small></div>
+<div class="cat" data-cat="B"><b>涉及領導、總監及主管的出差、頒獎禮、開幕式</b><br><small>公司派人做代表，我館沒持份的頒獎禮</small></div>
+<div class="tip">⚠️ 公司有持份的比賽頒獎禮 → 選「參與或舉行活動」；我館只派代表、沒持份的頒獎禮 → 選「涉及領導、總監及主管的出差、頒獎禮、開幕式」。</div>
+</section>
+
+<!-- P2 -->
+<section class="page" data-t="2. Subject">
+<div class="row"><div><label><span class="code">AAAA </span>活動類型</label><select id="typeA" class="w"></select></div>
+<div style="flex: 2 1 0%;"><label>類型說明</label><div id="typeDesc" class="tip info" style="margin: 0px;"></div></div></div>
+<label><span class="code">BBBB </span>項目名稱</label><input type="text" id="proj" class="w">
+<div class="row"><div style="flex: 0 0 200px;"><label>學校 / 機構</label><select id="orgKind" class="w"><option value="school"><span class="code">CCCC </span>學校</option><option value="org"><span class="code">DDDD </span>機構</option></select></div>
+<div id="schoolBox"><label>學校（可輸入關鍵字搜尋）</label><input type="text" id="school" list="schoolList" class="w"><datalist id="schoolList"></datalist>
+<small id="schoolInfo"></small> <button class="s g" onclick="editSchools()">更新學校名單</button></div>
+<div id="orgBox" style="display: none;"><label>機構名稱</label><input type="text" id="org" class="w"></div></div>
+<label><span class="code">EEEE </span>參與名單 — 部門同事（多選）</label><div id="staffGrid"></div>
+<label><span class="code">EEEE </span>參與名單 — 非部門同事（顯示名稱）</label><div id="extNames"></div><button class="s" onclick="addDyn('extNames','姓名')">＋ 新增</button>
+<div class="row"><div style="flex: 0 0 200px;"><label><span class="code">FFFF </span>人數</label><input type="text" id="ffff" class="num w"></div></div>
+<button class="s g" id="codeBtn" onclick="toggleCode()">顯示格式代號（AAAA–FFFF）</button>
+<div class="tip">預覽：<b id="subjPrev"></b></div>
+</section>
+
+<!-- P3 -->
+<section class="page" data-t="3. Attendees / Optional">
+<label>Attendees — 部門同事（已按上一步自動加入）</label><div id="attAuto" class="tip info"></div>
+<label>Attendees — 非部門同事電郵</label><div id="attExt"></div><button class="s" onclick="addMail('attExt')">＋ 新增</button>
+<label>Optional（不參與但需知情）</label><div id="optFixed" class="tip info"></div>
+<div id="optAsk" style="display: none;"><label>是否涉及？</label><div class="grid g4">
+<label><input type="checkbox" id="q1">館長（anitalam）</label><label><input type="checkbox" id="q2">Oscar（guidalai）</label><label><input type="checkbox" id="q3">PR（prd）</label></div></div>
+<label>Optional — 其他電郵</label><div id="optExt"></div><button class="s" onclick="addMail('optExt')">＋ 新增</button>
+<div class="tip">⚠️ 請留意是否涉及其他部門或秘書，如有，請加到 Optional。</div>
+</section>
+
+<!-- P4 -->
+<section class="page" data-t="4. 地點 / 時間">
+<label>Location</label><select id="locKind"><option value="in">館內</option><option value="out">館外</option></select>
+<div id="locIn"><div class="grid g4" id="locGrid" style="margin-top: 6px;"></div><div class="tip">⚠️ 館內地點至少選一個，並請確認不要與其他 booking 撞時段。</div></div>
+<div id="locOut" style="display: none;"><input type="text" id="locOutTxt" class="w" placeholder="館外地點" style="margin-top: 6px;"></div>
+<label class="allday"><input type="checkbox" id="allday"> 是否全天</label>
+<div class="row"><div><label>Start 日期</label><input type="date" id="sd"></div><div class="tm"><label>Start 時間</label><select id="st"></select></div>
+<div><label>End 日期</label><input type="date" id="ed"></div><div class="tm"><label>End 時間</label><select id="et"></select></div></div>
+<div id="timeErr" class="err"></div>
+</section>
+
+<!-- P5 -->
+<section class="page" data-t="5. 正文">
+<div id="bodyA"><div class="row">
+<div><label>參與人次</label><input type="text" id="b1" class="num w"></div>
+<div><label>學生人數（如有）</label><input type="text" id="b2" class="num w"></div>
+<div><label>老師人數（如有）</label><input type="text" id="b3" class="num w"></div>
+<div><label>年級（如有）</label><select id="b4" class="w"></select></div>
+<div><label>收費（如有）</label><input type="text" id="b5" class="num w"></div></div>
+<label>內容</label><textarea id="b6" rows="6"></textarea>
+<div class="tip">📎 如有附件，請於Zimbra端自行補上。</div></div>
+<div id="bodyB"><label>出席（姓名、職位、出席身份）</label>
+<table class="t"><thead><tr><th>姓名</th><th>職位</th><th>出席身份（如：主禮嘉賓、觀禮嘉賓、活動評審、出差成員）</th><th></th></tr></thead><tbody id="attendRows"></tbody></table>
+<button class="s" onclick="addAttend()">＋ 新增出席者</button>
+<label>主題</label><input type="text" id="topic" class="w"><div class="tip">⚠️ 請輸入正確及完整的名稱。</div>
+<div class="tip">日期及地點會根據第 4 步自動產生。📎 如有附件，請自行上載。</div></div>
+</section>
+
+<!-- P6 -->
+<section class="page" data-t="6. 輸出">
+<div id="warn"></div><div id="outs"></div>
+<button onclick="copyAll(event)">📋 複製全部</button>
+<div class="tip" id="finalTips"></div>
+</section>
+
+<div class="nav"><button class="g" id="prev">◀ 上一步</button><button id="next">下一步 ▶</button></div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const TYPES=[["教師培訓（第一類）", "由教青局舉辦之教師培訓"], ["教師培訓（第二類）", "非教青局舉辦及非繁星計之教師培訓，如館校合作之教師培訓、由科學館舉辦的特備教師培訓、其他團體使用我館設施舉辦之教師培訓。"], ["繁星計劃", "繁星計劃課程"], ["館校合作（館內）", "於館內舉行的常規與非常規之館校活動及工作坊、具教育配套的參觀活動（如指定提供工作坊及非常規的導賞及演示）"], ["館校合作（館外）", "所有於在學校舉行的課程、活動、科學日、演示"], ["館校合作（租借展品）", "以借用出當天作為活動日期，如為小學混級使用，則按整個小學混級的學生人數作計算"], ["比賽活動", "所有關於比賽的配套活動，包括講解、培訓及頒獎禮"], ["普及計劃", "與教青局合辦之學生科技教育普及計劃"], ["澳門食住遊- 學生研學篇", "與旅遊局合作之學生團體參觀"], ["親子活動", "常規及非常規的親子工作坊、夜探、教青局、音樂搞搞震、中樂、週五科普"], ["講座及工作坊", "線上及線下講座、非親子工作坊、家長共學堂、編程班、課程如編程班（津貼：高端課程，8小時以上，不少於20人）"], ["7、8月STEAM活動班", "暑假期間舉行之活動（津貼：高端課程，8小時以上，不少於20人）"], ["社福活動", "與社福團體相關的非常規參觀、工作坊及科普活動"], ["暑期活動", "參與教青局之暑期活動（津貼：外判高端課程）"], ["內部培訓", "非公開活動，由館內人員培訓館內人員、由非館內人員培訓館內人員、由館內人員培訓非館內人員（非學生及老師）進行日後之課程或活動"], ["團體參觀", "學校團體、VIP、澳門團體、非澳門團體、旅行團"], ["青年科技村", "有關於“青年科技村”科創人才培養計劃的活動"], ["研學團", "國內及本地收費之團體活動"], ["外展活動", "非館校的外展攤位活動，如IMD、科技周"], ["借用設備", "非學生或教師人員使用工房設備"], ["戲劇導賞", "導賞展廳的科普劇"], ["科普劇", "非展廳導賞的科普劇"], ["演示", "展廳的常規演示"], ["科學講解", "特備展覽的科學講解"]];
+const STAFF="barrymok candyfok carlosnip davidchan denniskuok fongng georgelai guidalai horaceleong janeleong keirawan lamchan nataliechan nettiesi nicolewong oscarleong ramseyao ryanlei samlei sikylam silvialio thomastai yanwong alexwong davidip jimleong marcolao matthewchan miccahmak ruihanwu".split(" ");
+const LOCS="科創育才綜合空間（細）、科創育才綜合空間（大）、科創育才綜合空間（公共空間）、NetLab、Maker Space（機械工房）、展覽中心、館範圍以外、線上平台工作室、線上、中庭、FABLAB（G00）、G01、G02、G03、G04、G05、G06、G07、G08、G09、G10、G11、G13、G15、會議廳、3、4號會議室、天文館、Tinker Space（咖啡閣）、Tinker Space（圖書閣）、觀景亭、心形樹、會議中心展示廊".split("、");
+const GRADES="幼一、幼二、幼三、幼兒混級、小一、小二、小三、初小混級、小四、小五、小六、高小混級、全小學混級、小學回歸、中小學混級、初一、初二、初三、初中混級、初中回歸、高一、高二、高三、高中混級、全中學混級、高中回歸、特殊教育、大一、大二、大三、大四、大學混級、研究所".split("、");
+// 預設學校名單（Notion 來源暫未能讀取，請按「更新學校名單」貼上最新名單）
+const DEFAULT_SCHOOLS={updated:"06 Sep 2026",list:["聖公會(澳門)蔡高中學", "菜農子弟學校", "聖善學校", "海星中學", "婦聯學校", "勞校中學附屬幼稚園", "勞校中學附屬小學", "勞校中學", "氹仔坊眾學校 (分校)", "下環浸會學校", "濠江中學附屬幼稚園", "濠江中學附屬小學", "濠江中學", "慈幼中學", "澳門中華總商會附設青洲中學", "教業中學 (分校)", "鏡平學校(小學部)", "廣大中學", "蓮峰普濟學校", "嶺南中學", "聖瑪大肋納學校", "沙梨頭坊眾學校", "化地瑪聖母女子學校", "陳瑞祺永援中學", "陳瑞祺永援中學（分校）", "培正中學", "培道中學", "培道中學(南灣分校)", "利瑪竇中學(中學部)", "聖家學校", "聖瑪沙利羅學校", "聖羅撒英文中學", "聖羅撒女子中學中文部", "聖德蘭學校", "聖若瑟教區中學第一校", "聖若瑟教區中學第三校", "聖若瑟教區中學第四校", "聖若瑟教區中學第五校 (中文部)", "九澳聖若瑟學校", "聖保祿學校", "澳門中華總商會附設商訓學校（夜間部）", "德明學校", "東南學校", "同善堂中學(日校)", "粵華中文中學", "粵華英文中學", "嘉諾撒聖心中學", "嘉諾撒聖心英文中學", "沙梨頭浸信學校", "協同特殊教育學校", "雷鳴道主教紀念學校", "庇道學校", "明愛學校", "明愛幼稚園", "聯國學校", "海暉學校", "聖安東尼幼稚園", "福建學校", "啟智學校", "魯彌士主教幼稚園", "樂富中葡幼稚園", "路環中葡學校", "北區中葡小學", "氹仔中葡學校", "何東中葡小學", "高美士中葡中學", "鮑思高粵華小學（中文部）", "聖若瑟教區中學第五校 (英文部)", "廣大中學(分校)", "澳坊中學（中學部）", "澳門中德學校", "培華中學", "菜農子弟學校(分校)", "濠江中學附屬英才學校", "同善堂中學附屬幼稚園", "氹仔坊眾學校", "庇道學校(夜間部)", "小學回歸教育", "澳門三育中學", "海星中學(夜間部)", "聖公會(澳門)蔡高中學(夜間部)", "鏡平學校(中學部)", "新華學校", "培道中學小學部分教處", "澳門三育中學(英文部)", "中葡職業技術學校", "高美士中葡中學(日間葡文部)", "澳門工聯職業技術中學", "二龍喉中葡小學", "二龍喉中葡小學(葡文部)", "澳門葡文學校", "中葡職業技術學校(夜校)", "中學回歸教育", "澳門大學附屬應用學校", "新華夜中學", "聖公會(澳門)蔡高中學(分校)", "高美士中葡中學(葡文成人夜間課程)", "東南學校-中學部", "澳坊中學（小幼部）", "聖公會中學(澳門)", "澳門國際學校", "澳門浸信中學", "創新中學", "教業中學附屬小學暨幼稚園分校", "澳門演藝學院舞蹈學校", "培道中學氹仔幼稚園分校", "鮑思高粵華小學（英文部）", "澳門演藝學院音樂學校", "教業中學", "利瑪竇中學附屬小學暨幼稚園", "澳門工聯職業技術中學(夜校)", "鄭觀應公立學校", "培華中學附屬小學暨幼稚園", "菜農子弟學校(灣景分校)", "培道中學氹仔分校", "庇道學校-英文部", "聖瑪大肋納學校(分校)", "聖若瑟教區中學第二校", "聖若瑟教區中學第六校 (中文部)", "聖若瑟教區中學第六校 (英文部)", "聖若瑟教區中學第六校 (夜間部)", "嘉諾撒聖心中學(幼稚園)", "石排灣公立學校", "二龍喉公立學校", "傳承國際學校", "澳門中華總商會附設商訓學校", "培正中學 (路環校部)", "濠江中學附屬橫琴學校(澳人子女學校)(小幼部)", "濠江中學附屬橫琴學校(澳人子女學校)(中學部)", "澳門大學", "澳門理工大學", "澳門旅遊學院", "澳門保安部隊高等學校", "澳門城市大學", "聖若瑟大學", "澳門鏡湖護理學院", "澳門科技大學", "澳門管理學院", "中西創新學院"]};
+const LS={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+let schools=JSON.parse(LS.get("cal_schools_v2")||"null")||DEFAULT_SCHOOLS;
+let cat=null,page=0;const pages=[...document.querySelectorAll(".page")];
+
+function fillSchools(){$("schoolList").innerHTML=schools.list.map(s=>`<option value="${s}">`).join("");$("schoolInfo").textContent=`學校名單最新更新日期：${schools.updated}（共 ${schools.list.length} 間）`;}
+function editSchools(){const t=prompt("請貼上學校中文名稱（每行一間，或以頓號／逗號分隔），來源：Notion 學校名單","");if(!t)return;
+ const d=prompt("請輸入該名單的最新 updated 日期（如 2026-11-21）","");schools={updated:d||"未註明",list:t.split(/[\n、,，]+/).map(x=>x.trim()).filter(Boolean)};LS.set("cal_schools_v2",JSON.stringify(schools));fillSchools();}
+$("typeA").innerHTML=TYPES.map(t=>`<option>${t[0]}</option>`).join("");
+const showDesc=()=>$("typeDesc").textContent=TYPES[$("typeA").selectedIndex][1];$("typeA").onchange=showDesc;showDesc();
+(()=>{const g={};[...STAFF].sort().forEach(x=>(g[x[0].toUpperCase()]??=[]).push(x));
+$("staffGrid").innerHTML='<div class="sgrp">'+Object.keys(g).sort().map(k=>`<div class="grpRow"><div class="grpL">${k}</div><div class="grpI">${g[k].map(s=>`<label><input type="checkbox" class="staff" value="${s}">${s}</label>`).join("")}</div></div>`).join("")+'</div>';})();
+function toggleCode(){const on=document.body.classList.toggle("showCode");$("codeBtn").textContent=on?"收起格式代號（AAAA–FFFF）":"顯示格式代號（AAAA–FFFF）";LS.set("cal_code",on?"1":"");}
+if(LS.get("cal_code"))toggleCode();
+$("locGrid").innerHTML=LOCS.map(s=>`<label><input type="checkbox" class="loc" value="${s}">${s}</label>`).join("");
+$("b4").innerHTML='<option value="">（無）</option>'+GRADES.map(g=>`<option>${g}</option>`).join("");
+const TIMES=[];for(let h=0;h<24;h++)for(let m=0;m<60;m+=15){const hh=(h%12)||12;TIMES.push({v:h*60+m,t:`${String(hh).padStart(2,"0")}:${String(m).padStart(2,"0")} ${h<12?"AM":"PM"}`});}
+["st","et"].forEach((id,i)=>{$(id).innerHTML=TIMES.map(x=>`<option value="${x.v}">${x.t}</option>`).join("");$(id).value=i?600:540;});
+fillSchools();
+$("orgKind").onchange=()=>{const s=$("orgKind").value==="school";$("schoolBox").style.display=s?"":"none";$("orgBox").style.display=s?"none":"";};
+$("locKind").onchange=()=>{const i=$("locKind").value==="in";$("locIn").style.display=i?"":"none";$("locOut").style.display=i?"none":"";};
+document.addEventListener("input",e=>{if(e.target.classList.contains("num")){e.target.value=e.target.value.replace(/[^0-9]/g,"");}update();});
+document.addEventListener("change",update);
+
+function addDyn(box,ph,val=""){const d=document.createElement("div");d.className="dyn";d.innerHTML=`<input type="text" class="w" placeholder="${ph}" value="${val}"><button class="s r" onclick="this.parentNode.remove();update()">✕</button>`;$(box).appendChild(d);}
+function addMail(box){const d=document.createElement("div");d.className="dyn";d.innerHTML=`<input type="text" class="user" placeholder="名稱" style="width:220px"><input type="text" class="dom" value="@msc.org.mo" style="width:180px"><button class="s r" onclick="this.parentNode.remove();update()">✕</button>`;$(box).appendChild(d);}
+function addAttend(){const tr=document.createElement("tr");tr.innerHTML=`<td><input type="text" class="w"></td><td><input type="text" class="w"></td><td><input type="text" class="w" placeholder="如：主禮嘉賓"></td><td><button class="s r" onclick="this.closest('tr').remove();update()">✕</button></td>`;$("attendRows").appendChild(tr);}
+addAttend();
+const vals=box=>[...$(box).querySelectorAll("input")].map(i=>i.value.trim()).filter(Boolean);
+const mails=box=>[...$(box).querySelectorAll(".dyn")].map(d=>{const u=d.querySelector(".user").value.trim(),m=d.querySelector(".dom").value.trim();return u?(u.includes("@")?u:u+m):"";}).filter(Boolean);
+const staffSel=()=>[...document.querySelectorAll(".staff:checked")].map(c=>c.value);
+const locSel=()=>[...document.querySelectorAll(".loc:checked")].map(c=>c.value);
+const fmtD=s=>{if(!s)return"";const[y,m,d]=s.split("-");return`${m}/${d}/${y}`;};
+const fmtT=v=>TIMES.find(x=>x.v==v).t;
+const WK="日一二三四五六";
+function zhDT(ds,v){if(!ds)return"";const[y,m,d]=ds.split("-").map(Number);const w=new Date(y,m-1,d).getDay();const h=Math.floor(v/60),mi=v%60;
+ const ap=h<12?"上午":(h<18?"下午":"晚上");const hh=(h%12)||12;return{d:`${y}年${m}月${d}日(星期${WK[w]})`,t:`${ap}${hh}時${mi?mi+"分":""}`};}
+
+function subject(){const org=$("orgKind").value==="school"?$("school").value.trim():$("org").value.trim();
+ const names=[...staffSel(),...vals("extNames")].join("、");
+ return `${$("typeA").value}：${$("proj").value.trim()}（${org}）[${names}]｛${$("ffff").value}｝`;}
+function attendees(){return[...staffSel().map(s=>s+"@msc.org.mo"),...mails("attExt")];}
+function optional(){let o=cat==="A"?["guidalai@msc.org.mo"]:["sec@msc.org.mo"];
+ if(cat==="B"){if($("q1").checked)o.push("anitalam@msc.org.mo");if($("q2").checked)o.push("guidalai@msc.org.mo");if($("q3").checked)o.push("prd@msc.org.mo");}
+ return[...new Set([...o,...mails("optExt")])];}
+function locText(){return $("locKind").value==="in"?locSel().join("、"):$("locOutTxt").value.trim();}
+function body(){if(cat==="A")return`參與人次：${$("b1").value}\n學生人數（如有）：${$("b2").value}\n老師人數（如有）：${$("b3").value}\n年級（如有）：${$("b4").value}\n收費（如有）：${$("b5").value}\n內容：${$("b6").value}`;
+ const rows=[...$("attendRows").querySelectorAll("tr")].map(tr=>[...tr.querySelectorAll("input")].map(i=>i.value.trim())).filter(r=>r.some(Boolean));
+ const s=zhDT($("sd").value,+$("st").value),e=zhDT($("ed").value||$("sd").value,+$("et").value);
+ let date="";if(s){if(AD()){date=s.d+(e&&e.d!==s.d?"至"+e.d:"")+"（全天）";}else{date=s.d+s.t;if(e)date+=(e.d===s.d?"至"+e.t:"至"+e.d+e.t);}}
+ const loc=$("locKind").value==="in"?locSel().map(l=>"澳門科學館 – "+l).join("、"):$("locOutTxt").value.trim();
+ return`出席 : ${rows.map(r=>`${r[0]}（${r[1]}）– ${r[2]}`).join("\n　　　")}\n日期 : ${date}\n主題 : ${$("topic").value.trim()}\n地點：${loc}`;}
+
+function check(){const w=[];if(!cat)w.push("未選類別");if(!$("proj").value.trim())w.push("未輸入項目名稱 BBBB");
+ if(!($("orgKind").value==="school"?$("school").value:$("org").value).trim())w.push("未輸入學校／機構");
+ if(!staffSel().length&&!vals("extNames").length)w.push("未選參與名單 EEEE");if(!$("ffff").value)w.push("未輸入人數 FFFF");
+ if($("locKind").value==="in"&&!locSel().length)w.push("館內地點至少選一個");if($("locKind").value==="out"&&!$("locOutTxt").value.trim())w.push("未輸入館外地點");
+ if(!$("sd").value||!$("ed").value)w.push("未選 Start／End 日期");
+ else if(AD()?($("ed").value<$("sd").value):(new Date($("ed").value)*1+ +$("et").value*6e4<=new Date($("sd").value)*1+ +$("st").value*6e4))w.push(AD()?"End 日期不可早於 Start":"End 必須晚於 Start");
+ if(cat==="A"&&!$("b1").value)w.push("未輸入參與人次");if(cat==="B"&&!$("topic").value.trim())w.push("未輸入主題");return w;}
+
+function update(){if(!cat)return;$("subjPrev").textContent=subject();
+ $("attAuto").textContent=staffSel().map(s=>s+"@msc.org.mo").join("; ")||"（未選部門同事）";
+ $("optFixed").textContent="預設必加："+(cat==="A"?"guidalai@msc.org.mo":"sec@msc.org.mo");
+ const w=check();$("timeErr").textContent=w.filter(x=>/Start|End/.test(x)).join("；");
+ $("warn").innerHTML=w.length?`<div class="tip bad">尚未完成：${w.join("、")}</div>`:"";
+ const O=[["Subject",subject()],["Attendees",attendees().join("; ")],["Optional",optional().join("; ")],["Location",locText()],
+  ...(AD()?[["Start 日期",fmtD($("sd").value)],["End 日期",fmtD($("ed").value)],["全天","是（請在行事曆勾選 All day）"]]:[["Start 日期",fmtD($("sd").value)],["Start 時間",fmtT($("st").value)],["End 日期",fmtD($("ed").value)],["End 時間",fmtT($("et").value)]]),["正文",body()]];
+ window._O=O;$("outs").innerHTML='<div class="outgrid">'+O.map((o,i)=>`<div class="out${/日期|時間|全天/.test(o[0])?"":" full"}"><h4>${o[0]}<button class="s" onclick="cp(${i},this)">複製</button></h4><pre></pre></div>`).join("")+'</div>';
+ [...$("outs").querySelectorAll("pre")].forEach((p,i)=>p.textContent=O[i][1]);
+ $("finalTips").innerHTML="<b>注意事項：</b><br>✅ 請選擇 <b>Exhibition</b> 的行事曆。<br>✅ 館內地點請確認未與其他 booking 撞時段。<br>"+(AD()?"✅ 全天活動請在行事曆勾選 All day。<br>":"")+"✅ 請檢查 Optional 是否需加入其他部門或秘書。<br>"+(cat==="A"?"📎 如有附件，請於Zimbra端自行補上。":"📎 如有附件，請自行上載。<br>✅ 請確認主題名稱正確及完整。");}
+function cpText(t,b){const ok=()=>{const o=b.textContent;b.textContent="已複製 ✓";setTimeout(()=>b.textContent=o,1200);};
+ const fb=()=>{const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(e){}a.remove();ok();};
+ if(!navigator.clipboard){fb();return;}navigator.clipboard.writeText(t).catch(fb).then(()=>{const o=b.textContent;b.textContent="已複製 ✓";setTimeout(()=>b.textContent=o,1200);});}
+function cp(i,b){cpText(_O[i][1],b);}
+function copyAll(ev){cpText(_O.map(o=>`【${o[0]}】\n${o[1]}`).join("\n\n"),ev.target);}
+
+document.querySelectorAll(".cat").forEach(c=>c.onclick=()=>{cat=c.dataset.cat;document.querySelectorAll(".cat").forEach(x=>x.classList.toggle("on",x===c));
+ $("hdrCat").textContent=c.querySelector("b").textContent;$("bodyA").style.display=cat==="A"?"":"none";$("bodyB").style.display=cat==="B"?"":"none";
+ $("optAsk").style.display=cat==="B"?"":"none";update();});
+$("steps").innerHTML=pages.map((p,i)=>`<div data-i="${i}">${p.dataset.t}</div>`).join("");
+$("steps").onclick=e=>{const i=e.target.dataset.i;if(i!==undefined)go(+i);};
+function go(i){if(i>0&&!cat){alert("請先選擇類別");return;}page=i;pages.forEach((p,j)=>p.classList.toggle("on",j===i));
+ [...$("steps").children].forEach((s,j)=>s.classList.toggle("on",j===i));$("prev").style.visibility=i?"visible":"hidden";
+ $("next").style.visibility=i<pages.length-1?"visible":"hidden";update();}
+$("prev").onclick=()=>go(page-1);$("next").onclick=()=>go(page+1);
+$("sd").onchange=()=>{if(!$("ed").value)$("ed").value=$("sd").value;update();};
+
+const AD=()=>$("allday").checked;
+$("allday").addEventListener("change",()=>{document.querySelectorAll(".tm").forEach(d=>d.style.display=AD()?"none":"");update();});
+function toggleTheme(){const h=document.documentElement,n=h.dataset.theme==="dark"?"light":"dark";h.dataset.theme=n;LS.set("cal_theme",n);
+ $("themeBtn").textContent=n==="dark"?"☀️ 日間模式":"🌙 夜間模式";}
+(()=>{const t=LS.get("cal_theme");if(t==="light")toggleTheme();})();
+go(0);
+</script>
+</body></html>
